@@ -1,6 +1,7 @@
-# Pylint
-
+# flake8 https://flake8.pycqa.org/en/latest/user/error-codes.html
+import math, random
 a = 1
+var = 10
 
 def foo(hello):
     print(hello)
@@ -27,3 +28,5 @@ for el in range(10):
                 print(el + el2 + el3)
             except:
                 pass
+
+example = lambda: 'example'  # noqa: E731

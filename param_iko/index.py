@@ -1,6 +1,7 @@
 import paramiko
 
 HOST = "192.168.1.75"
+# Add ssh key to authorized_keys
 
 ssh = paramiko.SSHClient()
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
@@ -10,6 +11,7 @@ stin, stout, ster = ssh.exec_command("ls -la")
 print(stout.read().decode("utf-8"))
 
 if ssh is not None:
+    # Needs to prevent gc error
     # https://github.com/paramiko/paramiko/issues/1078
     ssh.close()
     del ssh, stin
